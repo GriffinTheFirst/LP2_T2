@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Mi thymeleaf</title>
+	</head>
+<body>
+	<h1>Lista de roles</h1>
+	<table border="1">
+		<th:block th:each="p: ${ltsRole}">
+			<tr>
+				<td th:text ="${p.idrole}"></td>
+				<td th:text ="${p.name}"></td>
+				<td th:text ="${p.description}"></td>
+			</tr>
+		</th:block>
+	</table>
+	<h1>Lista de personas</h1>
+	<table border="1">
+			<th:block th:each="p: ${ltsPerson}">
+				<tr>
+					<td th:text ="${p.idperson}"></td>
+					<td th:text ="${p.fistname}"></td>
+					<td th:text ="${p.lastname}"></td>
+					<td th:text ="${p.user.name}"></td>
+					<td th:text ="${p.user.role.name}"></td>
+				</tr>
+			</th:block>
+		</table>
+		<h1>Lista de roles</h1>
+			<table border="1">
+				<th:block th:each="u: ${ltsUser}">
+					<tr>
+						<td th:text ="${u.name}"></td>
+						<td th:text ="${u.age}"></td>
+						<td th:text ="${u.email}"></td>
+						<td th:text ="${u.created}"></td>
+						<td th:text ="${u.role.name}"></td>
+						<td th:text ="${u.person.fistname} + ${u.person.lastname}"></td>
+					</tr>
+				</th:block>
+			</table>
+</body>
+</html>

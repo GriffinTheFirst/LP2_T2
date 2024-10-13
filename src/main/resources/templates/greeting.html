@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Mi thymeleaf</title>
+	</head>
+<body>
+	
+	<p th:text = "'Hello, ' + ${name} + '!'" />
+	
+	<p th:text ="${usrLogin.name} + ' - ' + ${usrLogin.person.fistname}"/>
+	<p th:text ="${usrLogin.lastlogin}"/>
+	
+</body>
+</html>
